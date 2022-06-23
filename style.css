@@ -14,9 +14,9 @@
 #container {
     padding: 1em;
     display: flex;
+    flex: 1;
     flex-wrap: wrap;
-    flex-grow: 1;
-    gap: 16px;
+    gap: 2em;
     justify-content: center;
     align-items: center;
 }
@@ -43,10 +43,12 @@
 #button-box {
     display: flex;
     border: 2px solid #000;
+    border-radius: 12px;
     flex-direction: column;
     justify-content: center;
     gap: 20px;
     padding: 15px;
+    height: 450px;
 }
 
 .slider-box {
@@ -65,6 +67,7 @@
     box-shadow: 2px 2px 2px 2px #424141;
     text-align: center;
     padding: 6px;
+    user-select: none;
 }
 
 .color-picker {

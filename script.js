@@ -5,6 +5,7 @@ const colorBox = document.querySelector('.color-picker')
 const slider = document.querySelector('#slider');
 const colorButton = document.querySelector('.color-button');
 const resetButton = document.querySelector('.reset-button');
+const randomButton = document.querySelector('.random');
 const sliderValue = document.createElement('div');
 
 // creates initial grid
@@ -37,13 +38,19 @@ resetButton.addEventListener('click',() => {
 })
 
 // adds translate effect when reset button is clicked 
+randomButton.addEventListener('mousedown',(e) => {
+    e.target.style.transform = 'translatey(2px)';
+})
+randomButton.addEventListener('mouseup',(e) => {
+    e.target.style.transform = null;
+})
+
 resetButton.addEventListener('mousedown',(e) => {
     e.target.style.transform = 'translatey(2px)';
 })
 resetButton.addEventListener('mouseup',(e) => {
     e.target.style.transform = null;
 })
-
 
 // creates grid and slider and also effects on grid
 function createGrid() {
