@@ -27,6 +27,7 @@ colorButton.addEventListener('input',() => {
     return color;  
 })
 
+// clears grid when clear button is clicked
 resetButton.addEventListener('click',() => {
     for (const single of div) {
         single.style.backgroundColor = '#ffffff';
@@ -34,6 +35,15 @@ resetButton.addEventListener('click',() => {
         single.classList.remove('hover');
     }
 })
+
+// adds translate effect when reset button is clicked 
+resetButton.addEventListener('mousedown',(e) => {
+    e.target.style.transform = 'translatey(2px)';
+})
+resetButton.addEventListener('mouseup',(e) => {
+    e.target.style.transform = null;
+})
+
 
 // creates grid and slider and also effects on grid
 function createGrid() {
