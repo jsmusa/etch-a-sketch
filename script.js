@@ -1,6 +1,12 @@
 const gridContainer = document.getElementById('grid-container');
 const div = [];
+const slider = document.querySelector('#slider');
 let gridSize = 16;
+
+slider.addEventListener('input',() => {
+    gridSize = slider.value;
+    console.log(gridSize);
+})
 
 // creates grid elements
 for (i=0; i<gridSize*gridSize; i++) {
@@ -22,3 +28,4 @@ function addHover(e) {
         e.target.style.opacity = opacity + 0.1;
     }
 }
+
