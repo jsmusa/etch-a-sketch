@@ -25,7 +25,11 @@ slider.addEventListener('input',() => {
 //replaces color with the value of colorButton input
 colorButton.addEventListener('input',() => {
     color = colorButton.value;
-    return color;  
+    for(const single of div) {
+        single.removeEventListener('mouseenter',randomColor);
+        single.addEventListener('mouseenter',addHover);
+    }
+    return color;
 })
 
 // clears grid when clear button is clicked
@@ -63,12 +67,14 @@ function createGrid() {
 
     //gives hover effect on grid elements 
     for(const single of div) {
-    single.addEventListener('mouseenter',addHover);
+        single.addEventListener('mouseenter',addHover);
     }
 
     //shows slider value on page 
     sliderValue.textContent = `${slider.value} x ${slider.value}`;
     sliderBox.appendChild(sliderValue);
+
+    randomButton.addEventListener('click',randomHover);
 }
 
 function addHover(e) {
@@ -80,3 +86,18 @@ function addHover(e) {
     }
 }
 
+function randomHover() {
+    for(const single of div) {
+        single.addEventListener('mouseenter',randomColor);
+        }
+}
+
+// picks random color using rgb (ranInt,ranInt,ranInt)
+function randomColor (e) {
+    e.target.style.backgroundColor = `rgb(${ranInt()},${ranInt()},${ranInt()})`;
+}
+
+// gets random integer from 0-255
+function ranInt () {
+    return Math.floor(Math.random()*256);
+}
